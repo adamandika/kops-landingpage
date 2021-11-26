@@ -1,0 +1,15 @@
+# LALU MASUKKAN PERINTAH BERIKUT UNTUK MENGAMBIL FULL.YAML
+
+kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v1.5.3/cert-manager.yaml
+
+wget https://github.com/kubernetes-sigs/aws-load-balancer-controller/releases/download/v2.3.0/v2_3_0_full.yaml
+
+# EDIT FILE v2_3_0_full.yaml lalu cari bagian cluster-name dan diganti dengan nama cluster KOPS kita
+
+# PASTIKAN MEMPUNYAI FILE DEPLOYMENT.YAML DAN SERVICE.YAML DENGAN KONFIGURASI LANDING PAGE
+# JIKA SUDAH PUNYA LALU LAKUKAN PERINTAH APPLY
+
+> kubectl apply -f v2_3_0_full.yaml
+
+# lalu lakukan perintah kubectl get services untuk melihat external ip yang kita dapatkan dari loadbalancer
+jika sudah lalu copykan external ip nya lalu masuk ke browser
